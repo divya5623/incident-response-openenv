@@ -16,12 +16,16 @@ for episode in range(episodes):
     steps = 0
 
     while not done:
-        if obs["cpu"] > 90:
-            action = "scale_up"
-        elif obs["errors"] == "high":
-            action = "restart"
-        else:
-            action = "notify_team"
+
+        # AI-like decision logic
+        score_map = {
+            "scale_up": obs["cpu"] / 100,
+            "restart": 1 if obs["errors"] == "high" else 0,
+            "rollback": 0.2,
+            "notify_team": 0.1
+        }
+
+        action = max(score_map, key=score_map.get)
 
         result = env.step(action)
 
