@@ -6,8 +6,8 @@ class IncidentEnv:
     def __init__(self):
         with open("tasks/incidents.json") as f:
             self.tasks = json.load(f)
-        self.current = None
         self.steps = 0
+        self.current = None
 
     def reset(self):
         self.current = random.choice(self.tasks).copy()
@@ -22,6 +22,7 @@ class IncidentEnv:
         # dynamic state update
         if action == "scale_up":
             self.current["cpu"] = max(10, self.current["cpu"] - 30)
+
         if action == "restart":
             self.current["errors"] = "low"
 
