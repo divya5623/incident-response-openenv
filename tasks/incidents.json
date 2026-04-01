@@ -1,0 +1,16 @@
+[
+  {
+    "incident": "payment api cpu high",
+    "cpu": 95,
+    "errors": "high",
+    "users": 10000, 
+    "correct_action": "scale_up"
+  },
+  {
+    "incident": "deployment failure",
+    "cpu": 50,
+    "errors": "high",
+    "users": 5000,
+    "correct_action": "rollback"
+  }
+]
