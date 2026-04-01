@@ -1,9 +1,13 @@
 from environment import IncidentEnv
+from grader import compute_score
 
 env = IncidentEnv()
 
 obs = env.reset()
 done = False
+
+total_reward = 0
+steps = 0
 
 while not done:
     print("Incident:", obs)
@@ -15,12 +19,17 @@ while not done:
     else:
         action = "notify_team"
 
-    print("Action:", action)
-
     result = env.step(action)
+
     obs = result["observation"]
+    reward = result["reward"]
     done = result["done"]
 
-    print("Reward:", result["reward"])
+    total_reward += reward
+    steps += 1
 
-print("Episode finished")
+score = compute_score(total_reward, steps)
+
+print("Total Reward:", total_reward)
+print("Steps:", steps)
+print("Final Score:", score)
