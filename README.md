@@ -104,3 +104,13 @@ Average Steps: 2.0
 Final Score: 1.25
 
 This environment simulates dynamic production failures and evaluates AI decision efficiency using multi-episode reinforcement scoring.
+## How to Run
+
+1. Install Python 3
+2. Run:
+   python inference.py
+
+The script will simulate multiple incidents and print:
+- Success Rate
+- Average Steps
+- Final Score
