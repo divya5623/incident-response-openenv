@@ -8,7 +8,6 @@ done = False
 while not done:
     print("Incident:", obs)
 
-    # simple rule-based agent
     if obs["cpu"] > 90:
         action = "scale_up"
     elif obs["errors"] == "high":
