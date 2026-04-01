@@ -3,7 +3,7 @@
     "incident": "payment api cpu high",
     "cpu": 95,
     "errors": "high",
-    "users": 10000, 
+    "users": 10000,
     "correct_action": "scale_up"
   },
   {
@@ -12,5 +12,26 @@
     "errors": "high",
     "users": 5000,
     "correct_action": "rollback"
+  },
+  {
+    "incident": "database overload",
+    "cpu": 85,
+    "errors": "high",
+    "users": 20000,
+    "correct_action": "scale_up"
+  },
+  {
+    "incident": "memory leak detected",
+    "cpu": 60,
+    "errors": "medium",
+    "users": 8000,
+    "correct_action": "restart"
+  },
+  {
+    "incident": "service crash",
+    "cpu": 20,
+    "errors": "high",
+    "users": 3000,
+    "correct_action": "restart"
   }
 ]
