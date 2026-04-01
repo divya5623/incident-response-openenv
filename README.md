@@ -93,3 +93,14 @@ Design an AI agent that:
 
 ## Expected Outcome
 An intelligent AI agent capable of automated production incident response.
+
+## Evaluation Results
+
+Example run output:
+
+Episodes: 5  
+Success Rate: 0.8  
+Average Steps: 2.0  
+Final Score: 1.25
+
+This environment simulates dynamic production failures and evaluates AI decision efficiency using multi-episode reinforcement scoring.
