@@ -27,3 +27,13 @@ The AI agent must choose the correct mitigation action.
 
 ## Goal
 Train AI agent to resolve incidents efficiently.
+## Multi-Step Environment
+The agent can take up to 3 actions before the episode ends.
+
+## Reward Logic
+- Correct action: +1.0
+- Partial correct: +0.3
+- Wrong action: -0.2
+
+## Goal
+Resolve incidents using correct mitigation steps.
