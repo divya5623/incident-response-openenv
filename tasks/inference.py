@@ -3,14 +3,25 @@ from environment import IncidentEnv
 env = IncidentEnv()
 
 obs = env.reset()
+done = False
 
-print(obs)
+while not done:
+    print("Incident:", obs)
 
-if obs["cpu"] > 90:
-    action = "scale_up"
-else:
-    action = "restart"
+    # simple rule-based agent
+    if obs["cpu"] > 90:
+        action = "scale_up"
+    elif obs["errors"] == "high":
+        action = "restart"
+    else:
+        action = "notify_team"
 
-result = env.step(action)
+    print("Action:", action)
 
-print(result)
+    result = env.step(action)
+    obs = result["observation"]
+    done = result["done"]
+
+    print("Reward:", result["reward"])
+
+print("Episode finished")
