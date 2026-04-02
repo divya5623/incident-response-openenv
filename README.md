@@ -1,8 +1,6 @@
 # AI Incident Response OpenEnv
 
-An AI-powered environment that simulates real-world production incidents and automatically selects the best mitigation action.
-
-This project demonstrates how intelligent agents can assist in automated incident response and reduce downtime in modern systems.
+An AI-powered environment that simulates real-world production incidents and automatically selects the best mitigation action. This project demonstrates how intelligent agents can assist in automated incident response and reduce downtime in modern systems.
 
 ---
 
@@ -21,7 +19,7 @@ Manual resolution is slow and error-prone. This project introduces an AI-driven 
 
 ## 🧠 Architecture
 
-Incident → Environment → AI Agent → Decision → Action → Reward
+Incident → Environment → AI Agent → Decision Engine → Mitigation Action → Reward → System Recovery
 
 ---
 
@@ -32,18 +30,19 @@ Incident → Environment → AI Agent → Decision → Action → Reward
 - Multi-step decision environment  
 - Reinforcement learning compatible  
 - Lightweight and modular architecture  
+- Extensible for new incident types  
 - Beginner-friendly structure  
 
 ---
 
 ## 🧠 Available Actions
 
-The AI agent can choose one of the following:
+The AI agent can choose:
 
-- scale_up  
-- restart  
-- rollback  
-- notify_team  
+- `scale_up`
+- `restart`
+- `rollback`
+- `notify_team`
 
 ---
 
@@ -51,10 +50,10 @@ The AI agent can choose one of the following:
 
 - Each episode allows **up to 3 actions**
 - Episode ends when:
-  - Correct action is taken
-  - OR maximum steps reached
+  - Correct action is taken  
+  - OR maximum steps reached  
 
-This simulates real-world decision making.
+This simulates real-world decision making and improves agent planning.
 
 ---
 
@@ -69,77 +68,8 @@ This simulates real-world decision making.
 ---
 
 ## 📂 Project Structure
-# AI Incident Response OpenEnv
 
-An AI-powered environment that simulates real-world production incidents and automatically selects the best mitigation action.
 
-This project demonstrates how intelligent agents can assist in automated incident response and reduce downtime in modern systems.
-
----
-
-## 🚀 Overview
-
-Modern production systems frequently encounter incidents such as:
-- CPU spikes
-- Memory leaks
-- Service crashes
-- Deployment failures
-- High error rates
-
-Manual resolution is slow and error-prone. This project introduces an AI-driven environment that simulates incidents and recommends mitigation strategies automatically.
-
----
-
-## 🧠 Architecture
-
-Incident → Environment → AI Agent → Decision → Action → Reward
-
----
-
-## ⚙️ Features
-
-- Simulates real-world production incidents  
-- AI-based mitigation selection  
-- Multi-step decision environment  
-- Reinforcement learning compatible  
-- Lightweight and modular architecture  
-- Beginner-friendly structure  
-
----
-
-## 🧠 Available Actions
-
-The AI agent can choose one of the following:
-
-- scale_up  
-- restart  
-- rollback  
-- notify_team  
-
----
-
-## 🔁 Multi-Step Environment
-
-- Each episode allows **up to 3 actions**
-- Episode ends when:
-  - Correct action is taken
-  - OR maximum steps reached
-
-This simulates real-world decision making.
-
----
-
-## 🎯 Reward Logic
-
-| Action Type     | Reward |
-|-----------------|--------|
-| Correct action  | +1.0   |
-| Partial correct | +0.3   |
-| Wrong action    | -0.2   |
-
----
-
-## 📂 Project Structure
 .
 ├── environment.py
 ├── inference.py
@@ -149,21 +79,19 @@ This simulates real-world decision making.
 ├── Dockerfile
 └── README.md
 
+
 ---
 
 ## ▶️ How to Run
 
 ```bash
 python inference.py
-
----
-```
 📊 Sample Output
 Episode 1
 Incident: CPU spike
 Action: scale_up
 Reward: +1.0
-
+```
 Episode 2
 Incident: service crash
 Action: restart
@@ -173,11 +101,7 @@ Episodes: 5
 Success Rate: 0.8
 Average Steps: 2.0
 Final Score: 1.25
-## ▶️ How to Run
 
-```bash
-python inference.py
-```
 🎯 Use Cases
 AI-powered DevOps automation
 Incident response training
@@ -197,6 +121,20 @@ Python
 Simulation environment
 AI decision logic
 Reinforcement learning compatible design
+
+📈 Evaluation Metrics
+Success Rate
+Average Steps
+Final Score
+Recovery Time
+Decision Accuracy
+
+#  repository topics 
+ai-agent
+incident-response
+reinforcement-learning
+devops
+simulation
 
 👩‍💻 Author
 
