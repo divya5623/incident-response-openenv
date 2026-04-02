@@ -144,51 +144,47 @@ Incident → Environment → AI Agent → Decision → Action → Reward → Rec
 ```bash
 python inference.py
 ```
-###
-📊 Sample Output
-Episode 1
--Incident: CPU spike
--Action: scale_up
--Reward: +1.0
 
-Episodes: 5
--Success Rate: 0.8
--Average Steps: 2.0
--Final Score: 1.25
+---
 
-🎯 Use Cases
--AI-powered DevOps automation
--Incident response training
--Reliability engineering research
--Autonomous agent experiments
+## 🎯 Use Cases
 
-🔮 Future Improvements
--Reinforcement learning agent
--Multi-agent coordination
--Dashboard visualization
--Monitoring tool integration
+- AI-powered DevOps automation  
+- Incident response training  
+- Reliability engineering research  
+- Autonomous agent experiments  
 
-🛠️ Tech Stack
--Python
--Simulation environment
--AI decision logic
+---
 
-==>repo topics 
--ai-agent
--incident-response
--reinforcement-learning
--devops
--simulation
+## 🔮 Future Improvements
 
-👩‍💻 Author
+- Reinforcement learning agent  
+- Multi-agent coordination  
+- Dashboard visualization  
+- Monitoring tool integration  
 
--Divya Shettar
--AI & ML Enthusiast
--GitHub: https://github.com/divya5623
+---
 
+## 🛠️ Tech Stack
 
+- Python  
+- Simulation environment  
+- AI decision logic  
 
+---
 
+## 🏷️ Repository Topics
 
+- ai-agent  
+- incident-response  
+- reinforcement-learning  
+- devops  
+- simulation  
 
+---
 
+## 👩‍💻 Author
+
+**Divya Shettar**  
+AI & ML Enthusiast  
+GitHub: https://github.com/divya5623
