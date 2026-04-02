@@ -1,43 +1,60 @@
-import json
 import random
 
-class IncidentEnv:
-
-    def __init__(self):
-        with open("tasks/incidents.json") as f:
-            self.tasks = json.load(f)
-        self.steps = 0
-        self.current = None
+class IncidentEnvironment:
+    def __init__(self, seed=42):
+        random.seed(seed)
+        self.max_steps = 3
+        self.current_step = 0
+        self.state_data = {}
+        self.done = False
+        self.current_incident = {}
 
     def reset(self):
-        self.current = random.choice(self.tasks).copy()
-        self.steps = 0
-        return self.current
+        self.current_step = 0
+        self.done = False
+        # Randomly select an incident
+        self.current_incident = random.choice(self._load_incidents())
+        self.state_data = self._get_initial_state(self.current_incident)
+        return self.state()
 
     def step(self, action):
-        self.steps += 1
+        if self.done:
+            raise Exception("Episode is done. Call reset().")
 
-        correct = self.current["correct_action"]
+        reward = self._apply_action(action)
+        self.current_step += 1
+        # Check if episode is done
+        if action == self.current_incident["best_action"] or self.current_step >= self.max_steps:
+            self.done = True
 
-        # dynamic state update
-        if action == "scale_up":
-            self.current["cpu"] = max(10, self.current["cpu"] - 30)
+        return self.state(), reward, self.done, {}
 
-        if action == "restart":
-            self.current["errors"] = "low"
+    def state(self):
+        return self.state_data
 
-        # reward logic
-        if action == correct:
+    def _load_incidents(self):
+        import json
+        with open("tasks/incidents.json") as f:
+            return json.load(f)
+
+    def _get_initial_state(self, incident):
+        # Example: state has CPU, memory, latency, errors, etc.
+        return {
+            "cpu": incident.get("cpu", 50),
+            "memory": incident.get("memory", 50),
+            "latency": incident.get("latency", 100),
+            "errors": incident.get("errors", "low"),
+            "deploy_status": incident.get("deploy_status", "ok"),
+        }
+
+    def _apply_action(self, action):
+        # Basic reward logic
+        if action == self.current_incident["best_action"]:
             reward = 1.0
-        elif action in ["scale_up", "restart", "rollback"]:
-            reward = 0.3
+        elif action in self.current_incident.get("acceptable_actions", []):
+            reward = 0.5
         else:
             reward = -0.2
-
-        done = action == correct or self.steps >= 3
-
-        return {
-            "observation": self.current,
-            "reward": reward,
-            "done": done
-        }
+            # Optional: worsen some state metrics
+            self.state_data["cpu"] += random.randint(5, 15)
+        return reward
