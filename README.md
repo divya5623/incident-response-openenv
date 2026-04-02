@@ -64,10 +64,11 @@ Incident → Environment → AI Agent → Decision → Action → Reward → Rec
 ---
 
 ## 📂 Project Structure
+.
 ├── environment.py
 ├── inference.py
 ├── tasks/
-│ └── incidents.json
+│   └── incidents.json
 ├── grader.py
 └── README.md
 
