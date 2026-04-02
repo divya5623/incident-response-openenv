@@ -1,8 +1,26 @@
 [
-  {"cpu": 95, "errors": "low", "correct_action": "scale_up"},
-  {"cpu": 40, "errors": "high", "correct_action": "restart"},
-  {"cpu": 70, "errors": "low", "correct_action": "notify_team"},
-  {"cpu": 88, "errors": "high", "correct_action": "restart"},
-  {"cpu": 99, "errors": "low", "correct_action": "scale_up"},
-  {"cpu": 60, "errors": "high", "correct_action": "rollback"}
+  {
+    "level": "easy",
+    "cpu": 95,
+    "errors": "low",
+    "best_action": "scale_up",
+    "acceptable_actions": ["restart"]
+  },
+  {
+    "level": "medium",
+    "cpu": 70,
+    "errors": "high",
+    "deploy_status": "recent",
+    "best_action": "rollback",
+    "acceptable_actions": ["restart"]
+  },
+  {
+    "level": "hard",
+    "cpu": 90,
+    "errors": "high",
+    "deploy_status": "failed",
+    "latency": 200,
+    "best_action": "notify_team",
+    "acceptable_actions": ["rollback", "scale_up"]
+  }
 ]
