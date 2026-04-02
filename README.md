@@ -122,20 +122,3 @@ Reinforcement learning compatible design
 Divya Shettar
 AI & ML Enthusiast
 GitHub: https://github.com/divya5623
-
-📜 License
-
-MIT License
-
-
----
-
-# What to do now (very simple)
-1. Open your repo  
-2. Open `README.md`  
-3. Click ✏️ Edit  
-4. **Delete everything**  
-5. Paste above code  
-6. Click **Commit changes**  
-
-Done ✅  
