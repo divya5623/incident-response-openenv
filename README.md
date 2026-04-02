@@ -96,23 +96,27 @@ Episodes: 5
 Success Rate: 0.8  
 Average Steps: 2.0  
 Final Score: 1.25
+
 🎯 Use Cases
 AI-powered DevOps automation
 Incident response training
 Reliability engineering experiments
 Research on autonomous agents
 Production system simulations
+
 🔮 Future Improvements
 Reinforcement learning agent
 Multi-agent coordination
 Dashboard visualization
 Integration with monitoring tools
 Real-time alert ingestion
+
 🛠️ Tech Stack
 Python
 Simulation environment
 AI decision logic
 Reinforcement learning compatible design
+
 👩‍💻 Author
 
 Divya Shettar
