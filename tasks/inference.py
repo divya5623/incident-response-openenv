@@ -1,50 +1,17 @@
-from environment import IncidentEnv
-from grader import compute_score
+from environment import IncidentEnvironment
 
-env = IncidentEnv()
-
-episodes = 5
-total_score = 0
-success = 0
-total_steps = 0
-
-for episode in range(episodes):
-    obs = env.reset()
-    done = False
-
-    total_reward = 0
-    steps = 0
-
-    while not done:
-
-        # AI-like decision logic
-        score_map = {
-            "scale_up": obs["cpu"] / 100,
-            "restart": 1 if obs["errors"] == "high" else 0,
-            "rollback": 0.2,
-            "notify_team": 0.1
-        }
-
-        action = max(score_map, key=score_map.get)
-
-        result = env.step(action)
-
-        obs = result["observation"]
-        reward = result["reward"]
-        done = result["done"]
-
-        total_reward += reward
-        steps += 1
-
-    score = compute_score(total_reward, steps)
-
-    total_score += score
-    total_steps += steps
-
-    if total_reward > 0:
-        success += 1
-
-print("Episodes:", episodes)
-print("Success Rate:", success / episodes)
-print("Average Steps:", total_steps / episodes)
-print("Final Score:", total_score / episodes)
+if __name__ == "__main__":
+    env = IncidentEnvironment()
+    print("[START]")
+    for episode in range(1, 6):
+        state = env.reset()
+        done = False
+        step_count = 0
+        print(f"Episode {episode}")
+        while not done:
+            # Simple rule-based agent: always pick best_action from incident
+            action = env.current_incident["best_action"]
+            state, reward, done, _ = env.step(action)
+            print(f"Step {step_count+1} - Action: {action} - Reward: {reward}")
+            step_count += 1
+    print("[END]")
