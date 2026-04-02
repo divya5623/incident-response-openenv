@@ -157,6 +157,7 @@ This simulates real-world decision making.
 python inference.py
 
 ---
+```
 📊 Sample Output
 Episode 1
 Incident: CPU spike
@@ -176,23 +177,27 @@ Final Score: 1.25
 
 ```bash
 python inference.py
+```
 🎯 Use Cases
 AI-powered DevOps automation
 Incident response training
 Reliability engineering experiments
 Research on autonomous agents
 Production system simulations
+
 🔮 Future Improvements
 Reinforcement learning agent
 Multi-agent coordination
 Dashboard visualization
 Integration with monitoring tools
 Real-time alert ingestion
+
 🛠️ Tech Stack
 Python
 Simulation environment
 AI decision logic
 Reinforcement learning compatible design
+
 👩‍💻 Author
 
 Divya Shettar
