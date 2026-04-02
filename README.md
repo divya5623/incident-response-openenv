@@ -146,44 +146,44 @@ python inference.py
 ```
 📊 Sample Output
 Episode 1
-Incident: CPU spike
-Action: scale_up
-Reward: +1.0
+-Incident: CPU spike
+-Action: scale_up
+-Reward: +1.0
 
 Episodes: 5
-Success Rate: 0.8
-Average Steps: 2.0
-Final Score: 1.25
+-Success Rate: 0.8
+-Average Steps: 2.0
+-Final Score: 1.25
 
 🎯 Use Cases
-AI-powered DevOps automation
-Incident response training
-Reliability engineering research
-Autonomous agent experiments
+-AI-powered DevOps automation
+-Incident response training
+-Reliability engineering research
+-Autonomous agent experiments
 
 🔮 Future Improvements
-Reinforcement learning agent
-Multi-agent coordination
-Dashboard visualization
-Monitoring tool integration
+-Reinforcement learning agent
+-Multi-agent coordination
+-Dashboard visualization
+-Monitoring tool integration
 
 🛠️ Tech Stack
-Python
-Simulation environment
-AI decision logic
+-Python
+-Simulation environment
+-AI decision logic
 
 ==>repo topics 
-ai-agent
-incident-response
-reinforcement-learning
-devops
-simulation
+-ai-agent
+-incident-response
+-reinforcement-learning
+-devops
+-simulation
 
 👩‍💻 Author
 
-Divya Shettar
-AI & ML Enthusiast
-GitHub: https://github.com/divya5623
+-Divya Shettar
+-AI & ML Enthusiast
+-GitHub: https://github.com/divya5623
 
 
 
