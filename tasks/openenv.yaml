@@ -1,3 +1,24 @@
-name: incident-response-env
-entrypoint: environment.py
-grader: grader.py
+name: ai-incident-response
+description: AI environment simulating real-world production incidents with multi-step decision-making.
+version: 1.0
+author: Divya Shettar
+action_space:
+  type: discrete
+  actions:
+    - scale_up
+    - restart
+    - rollback
+    - notify_team
+observation_space:
+  type: dict
+  fields:
+    cpu: int
+    memory: int
+    latency: int
+    errors: str
+    deploy_status: str
+tasks:
+  - easy
+  - medium
+  - hard
+entrypoint: inference.py
